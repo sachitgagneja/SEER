@@ -1,6 +1,11 @@
 <?php
 
-$connection = mysqli_connect("localhost", "root", "", "seer");
+$db_name = 'heroku_de43dbe6e6514ee';
+$host = 'us-cdbr-east-05.cleardb.net';
+$username = 'becc28865607af';
+$password = '3f0f3cd2';
+
+$connection = mysqli_connect($host, $username, $password, $db_name);
 
 function populateSource()
 {
