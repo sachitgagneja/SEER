@@ -11,7 +11,7 @@
           rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
-
+    <script type="text/javascript" src="functions.js"></script>
 </head>
 
 <body id="page-top">
@@ -31,14 +31,13 @@
         <div class="form-group row">
             <label for="datefrom" class="col-4 col-form-label">Date Range:</label>
             <input type="date" class="form-control col-3" id="dateFrom"
-                   name="dateFrom" min="2010-06-05" max="2020-06-05">
+                   name="dateFrom">
             <input type="date" class="form-control col-3" id="dateTo"
-                   name="dateTo" min="2010-06-05" max="2020-06-05">
+                   name="dateTo">
         </div>
         <div class="form-group row">
             <label for="field1" class="col-4 col-form-label">If</label>
             <select class="col-2"name="field1" id="field1">
-                <option value="">Name of field</option>
                 <option value="title">Methodology</option>
             </select>
             <select class="col-2"name="operator" id="operator">
@@ -47,16 +46,20 @@
                 <option value="beginsWith">begins with</option>
                 <option value="endsWith">ends with</option>
             </select>
-            <select class="col-2"name="operator" id="operator">
-                <option value="contains">TDD</option>
+            <select class="col-2" name="methodology">
+                <option value='TDD'>TDD</option>
             </select>
         </div>
         <br>
         <div>
-            <button type="submit" class="btn btn-primary" name="submit">Run Search</button>
+            <input type="button" class="btn btn-primary" value="Run Search" onclick="searchResult(methodology.value)">
             <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
     </form>
+    <br>
+    <div>
+    <p id='result'><br></p>
+    </div>
 </div>
 </div>
 </body>

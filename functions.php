@@ -5,24 +5,9 @@ $host = 'us-cdbr-east-05.cleardb.net';
 $username = 'becc28865607af';
 $password = '3f0f3cd2';
 
-$connection = mysqli_connect($host, $username, $password, $db_name);
+ $connection = mysqli_connect($host, $username, $password, $db_name);
+//$connection = mysqli_connect('localhost', 'root', '', 'seer');
 
-function populateSource()
-{
-    global $connection, $result, $title, $author, $year, $source, $doi, $volume, $pages, $article_id;
-    //$article_id = (explode(",", $input))[1];
-    $query = "SELECT * FROM moderation WHERE article_id = '$article_id'";
-    $result = mysqli_query($connection, $query);
-    $row = mysqli_fetch_assoc($result);
-    $title = $row['title'];
-    $author = $row['author'];
-    $year = $row['year'];
-    $source = $row['source'];
-    $doi = $row['doi'];
-    $volume = $row['volume'];
-    $pages = $row['pages'];
-    $article_id = $row['article_id'];
-}
 
 function rejectSource()
 {
